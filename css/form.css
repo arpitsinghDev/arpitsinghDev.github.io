@@ -1,0 +1,41 @@
+.log_con{
+	text-align: right;
+}
+.log_box{
+	position: fixed;
+	width: 40%;
+	height: 90%;
+	background-color: #C6D4EA;
+	z-index: 2;
+	opacity: 0.9;
+	padding: 2%;
+	text-align: right;
+	margin-left: 25%;
+	margin-top: -60%;
+}
+.log_move{
+	transform: translateY(10%);
+	transition: all 0.8s;
+}
+.log_box h2{
+	text-align: center;
+	font-style: italic;
+	font-size: 50px;
+}
+.log_box label{
+	color: #000000;
+}
+.log_box .f_login{
+	font-size: 25px;
+	display: none;
+}
+.f_login input{
+	margin-top: 15%;
+}
+.log_box .f_signup{
+	font-size: 23px;
+	display: none;
+}
+.f_signup input{
+	margin-top: 10%;
+}
