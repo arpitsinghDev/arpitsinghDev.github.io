@@ -215,10 +215,13 @@ top: 20%;
 }
 @keyframes show-ani{
 	0%{
-		transform: translateX(0px) translateY(100px);
+		transform: translateX(0px) translateY(50px) scaleX(1);
+	}
+	50%{
+		transform: scaleX(.8);
 	}
 	100%{
-		transform: translateX(400px) translateY(50px);
+		transform: translateX(400px) translateY(50px) scaleX(.9);
 	}
 }
 #skillsvg{
