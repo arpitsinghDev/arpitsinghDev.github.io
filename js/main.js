@@ -78,8 +78,8 @@ $('#send').click(function(){
         {
             $.ajax({
                 method:"POST",
-                //url:"https://arpitsingh.herokuapp.com/send",
-                url:"http://localhost:5000/send",
+                url:"https://arpitsingh.herokuapp.com/send",
+                //url:"http://localhost:5000/send",
                 data:{email:email,message:mess},
                 context: document.body
             }).done(res=>{
