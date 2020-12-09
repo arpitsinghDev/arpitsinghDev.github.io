@@ -68,33 +68,26 @@ $('#skillsvg').mouseout(()=>{
     $('.sub-work').mouseout(function(){
        // $('.sub-work .worknav').hide(1000);
     })
- var firebaseConfig = {
-    apiKey: "AIzaSyDfKSdCFXn77z8pj0zWnWGLD-h0J4-9guk",
-    authDomain: "myresume-e939a.firebaseapp.com",
-    databaseURL: "https://myresume-e939a.firebaseio.com",
-    projectId: "myresume-e939a",
-    storageBucket: "myresume-e939a.appspot.com",
-    messagingSenderId: "87139879444",
-    appId: "1:87139879444:web:12c899d976f6b1e2527501",
-    measurementId: "G-HHY53HS5CX"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-var playersRef = firebase.database().ref().child("person");
+
 $('#send').click(function(){
     let =email=$('#email').val(),
         mess=$('#message').val();
-        let mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+ let mailformat = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
     if(email !=''&& mess != ''){
         if(email.match(mailformat))
         {
-            playersRef.push ({
-            date:data(),
-            email:email,
-            message:mess
-        });
-        $('#send-mess').text("Thanks for contact me");
+            $.ajax({
+                method:"POST",
+                //url:"https://arpitsingh.herokuapp.com/send",
+                url:"http://localhost:5000/send",
+                data:{email:email,message:mess},
+                context: document.body
+            }).done(res=>{
+                console.log(res);
+                $('#send-mess').text("Thanks for contact me");
+            }).fail(function() {
+                console.log( "error" );
+              })
         }else $('#send-mess').text("Enter vaild email");  
     }else{
         $('#send-mess').text("Fill all field");  

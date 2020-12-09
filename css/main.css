@@ -218,7 +218,7 @@ top: 20%;
 		transform: translateX(0px) translateY(50px) scaleX(1);
 	}
 	50%{
-		transform: scaleX(.8);
+		transform: scaleX(.8) translateX(200px);
 	}
 	100%{
 		transform: translateX(400px) translateY(50px) scaleX(.9);
