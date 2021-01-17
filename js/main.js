@@ -97,3 +97,7 @@ $('#send').click(function(){
 
 
 });
+
+$(document).ready(function(){
+   
+})
