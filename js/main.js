@@ -4,13 +4,19 @@ $(window).scroll(function() {
     if($height < 10) {
         $('.nav *').addClass('defu');
         $('#laptop path').removeClass('fuller');
+        $('#proname span').addClass('proname-hover')
+        $('.contants p').addClass('index-move')
     } 
     if($height > 10){
         $('.nav *').removeClass('defu');
         $('#laptop path').addClass('fuller');
+        $('#proname span').addClass('proname-hover')
+        $('.contants p').addClass('index-move')
     }
     if($height > 600 ){
         $('#laptop path').removeClass('fuller');
+        $('#proname span').removeClass('proname-hover')
+        $('.contants p').removeClass('index-move')
     }
     if($height=>730 || $height < 1110){
         $('.skills svg path').addClass('anima');
@@ -99,5 +105,20 @@ $('#send').click(function(){
 });
 
 $(document).ready(function(){
-   
+
+   // document.querySelector('#displacementFilter').firstElementChild.attributes.baseFrequency.value=0.2;
+animation()
+
 })
+let frames = 0;
+let rad = Math.PI / 180;
+
+function animation(){
+    bfx = .01;
+    frames += .55
+    bfx += 0.005 * Math.sin(frames * rad);
+    bf = bfx.toString()
+    //console.log(bf);
+    document.querySelector('#displacementFilter').firstElementChild.attributes.baseFrequency.value=bf;
+    requestAnimationFrame(animation);
+}
