@@ -1,6 +1,7 @@
+let box=document.body.clientHeight/4;
 $(window).scroll(function() {
-    var $height = $(window).scrollTop();
-    console.log($height);
+    let $height = $(window).scrollTop();
+   // console.log($height);
     if($height < 10) {
         $('.nav *').addClass('defu');
         $('#laptop path').removeClass('fuller');
@@ -18,22 +19,22 @@ $(window).scroll(function() {
         $('#proname span').removeClass('proname-hover')
         $('.contants p').removeClass('index-move')
     }
-    if($height=>730 || $height < 1110){
+    if($height>=box || ($height < box+300 && $height>=box)){
         $('.skills svg path').addClass('anima');
     }
-    if($height < 629 || $height > 1210){
+    if($height < box || $height > box*2){
         $('.skills svg path').removeClass('anima');
     }
-    if($height=>1220 || $height < 1500){
+    if($height < (box*3)-box/2 && $height > (box*2)){
         $('.work svg path').addClass('anima1');
     }
-    if($height < 1210 || $height > 1610){
+    if($height>=box*3 || $height<box*2){
         $('.work svg path').removeClass('anima1');
     }
-    if($height=>1780 || $height < 1980){
+    if($height>=(box*3)-300 || ($height < (box*3)+110 && $height > (box*3))){
         $('.contact svg path').addClass('anima2');
     }
-    if($height < 1770 || $height > 2390){
+    if($height >= box*4 || $height < box*3){
         $('.contact svg path').removeClass('anima2');
     }
 });
@@ -60,12 +61,8 @@ $(document).ready(function(){
     
    
    }
-   $('#skillsvg').mouseover(()=>{
-    $('#skillsvg').addClass('rotater')
-})
-$('#skillsvg').mouseout(()=>{
-    $('#skillsvg').removeClass('rotater');
-})
+ 
+
 // work
     $('.sub-work').mouseover(function(){
         // console.log('yeo')
@@ -103,7 +100,21 @@ $('#send').click(function(){
 
 
 });
+let delay=5000, setTimeoutConst;
+$("#skillsvg").on('mouseover', function(){
+    $("#skillsvg").addClass("rotater") 
+})
+$("#skillsvg").on('mouseleave', debounce(function(){
+    $("#skillsvg").removeClass("rotater") 
+},4000))
 
+function debounce(fn,d){
+    let timeId;
+    return function(...argu){
+        clearTimeout(timeId)
+       timeId= setTimeout(()=>fn(...argu),d)
+    }
+}
 $(document).ready(function(){
 
    // document.querySelector('#displacementFilter').firstElementChild.attributes.baseFrequency.value=0.2;
