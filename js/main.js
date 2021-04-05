@@ -1,23 +1,23 @@
-let box=document.body.clientHeight/4;
+let box=document.body.clientHeight/5;
 $(window).scroll(function() {
     let $height = $(window).scrollTop();
-   // console.log($height);
-    if($height < 10) {
+    console.log($height);
+    if($height < window.innerHeight-100) {
         $('.nav *').addClass('defu');
         $('#laptop path').removeClass('fuller');
         $('#proname span').addClass('proname-hover')
-        $('.contants p').addClass('index-move')
+        $('.contants .details').removeClass('index-move')
     } 
-    if($height > 10){
+    if($height > window.innerHeight-100){
         $('.nav *').removeClass('defu');
         $('#laptop path').addClass('fuller');
         $('#proname span').addClass('proname-hover')
-        $('.contants p').addClass('index-move')
+        $('.contants .details').addClass('index-move')
     }
-    if($height > 600 ){
+    if($height > 2*innerHeight ){
         $('#laptop path').removeClass('fuller');
         $('#proname span').removeClass('proname-hover')
-        $('.contants p').removeClass('index-move')
+        $('.contants .details').removeClass('index-move')
     }
     if($height>=box || ($height < box+300 && $height>=box)){
         $('.skills svg path').addClass('anima');
@@ -118,7 +118,7 @@ function debounce(fn,d){
 $(document).ready(function(){
 
    // document.querySelector('#displacementFilter').firstElementChild.attributes.baseFrequency.value=0.2;
-animation()
+//animation()
 
 })
 let frames = 0;
@@ -132,4 +132,96 @@ function animation(){
     //console.log(bf);
     document.querySelector('#displacementFilter').firstElementChild.attributes.baseFrequency.value=bf;
     requestAnimationFrame(animation);
+}
+const canvas = document.querySelector('#canvas');
+const ctx = canvas.getContext("2d")
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+window.addEventListener("resize",()=>{
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+})
+const particleArray = []
+let isRun=false;
+const color=["#ffffff22"]
+console.log(ctx);
+const mouse = {
+    x: undefined,
+    y: undefined
+}
+let g=0
+class Particle {
+    constructor() {
+        this.x = mouse.x;
+        this.y = mouse.y;
+        this.moveX = Math.random() * 3 -1.5;
+        this.moveY = Math.random() * 3 -1.5;
+        this.size = Math.random() * 31 + 1;
+        this.shrink= -0.4;
+        this.color=color[0]
+    }
+    update() {
+        this.x+=this.moveX;
+        this.y+=this.moveY;
+      //  this.y+=this.moveY;
+        this.size+=this.shrink;
+    }
+    draw() {
+        ctx.strokeStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, Math.PI * 2, 0);
+       // ctx.fill()
+        ctx.stroke();
+    }
+}
+window.addEventListener("click", (e) => {
+    mouse.x = e.pageX;
+    mouse.y = e.pageY;
+   // console.log(e.y,e.clientY,e.pageY,e.y,e.screenY);
+    setParticle(50)
+    mover()
+    isRun=true;
+})
+window.addEventListener("touchmove", (e) => {
+    const touch = ev.originalEvent.changedTouches[0];
+    mouse.x = touch.pageX;
+    mouse.y = touch.pageY;
+    setParticle(10)
+    mover()
+    isRun=true;
+})
+window.addEventListener("mousemove", (e) => {
+    mouse.x = e.pageX;
+    mouse.y = e.pageY;
+    setParticle(10)
+    mover()
+    isRun=true;
+})
+function mover(){
+    if(!isRun){
+        animation()
+    }
+}
+function setParticle(c) {
+    for (let i = 0; i < c; i++) {
+        particleArray.push(new Particle())
+    }
+    //  particleArray[0]=new Particle()
+}
+function animation(){
+    g++
+    if(g>254)g=0
+    // ctx.fillStyle="rgba(255,255,255,.5)"
+    // ctx.fillRect(0,0,canvas.width,canvas.height)
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    for (let i = 0; i < particleArray.length; i++) {
+        particleArray[i].update();
+        particleArray[i].draw();
+        if(particleArray[i].size<1){
+            particleArray.splice(i,1);
+            i--;
+        }
+    }
+    requestAnimationFrame(animation)
 }
