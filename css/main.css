@@ -364,6 +364,7 @@ transition: all 7s;
     display: flex;
 	justify-content: space-around;
 flex-wrap: wrap;
+
 }
 .work .wsvg{
 	width: 180px;
@@ -389,9 +390,9 @@ flex-wrap: wrap;
 text-align: center;
 width: 100%;
 display: flex;
-align-items: center;
-justify-content: center;
+justify-content: space-evenly;
 top: 20px;
+flex-wrap: wrap;
 }
 .anima1{
 	animation: woker 1.5s linear alternate 1;
@@ -509,6 +510,7 @@ overflow: hidden;
 	position: relative;
 	width: 240px;
     color: white;
+	height: 300px;
 }
 .discription{
 width: 240px;
@@ -551,14 +553,6 @@ position: relative;
 		width: 140px;
 margin: 4px;
 padding: 10px;
-	}
-	.workcon{
-		position: relative;
-		text-align: center;
-		width:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 	}
 	.sub-work{
 		left: auto;
