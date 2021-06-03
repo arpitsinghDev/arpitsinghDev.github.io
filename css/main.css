@@ -14,17 +14,18 @@ body{
 	overflow-x: hidden;
 	font-family: Poppins;
 }
-html{
+html,body{
 	scroll-behavior: smooth;
 }
 header{
 	width: 100%;
-	height: 100vh;
-	min-height: 720px;
+	height: auto;
+	min-height: 100vh;
 	background-color: #222222;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	position: relative;
 }
 header .container {
 	cursor: default;
@@ -40,8 +41,10 @@ header .container p{
 canvas{
 	top: 0;
 	background-color: transparent;
-	pointer-events: none;
 	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 6;
 }
 .sub-con{
 	position: relative;
@@ -135,26 +138,26 @@ color: #5C0A79;
 }
 #proname{
 	font-size: 30px;
-	white-space: nowrap;
 }
 .proname-hover{
 	transform: translateZ(15px);
 	transition-delay: 15s;
-display: inline-block;
-font-size: 55px;
-transition: all 1s;
-transform-origin: -23% -30%;
-text-shadow: -6px 0px #16B7C155,-5px 0px #16B7C155,-4px 0px #16B7C155,-3px 0px #16B7C155;
+	display: inline-block;
+	font-size: 55px;
+	transition: all 1s;
+	transform-origin: -23% -30%;
+	text-shadow: -6px 0px #16B7C155,-5px 0px #16B7C155,-4px 0px #16B7C155,-3px 0px #16B7C155;
 }
 .arpit{
 	text-transform: capitalize;
 	color: #7920c2;
-	line-height: 20px;
+	line-height: 70px;
+	white-space: nowrap;
 }
 .contants {
 	perspective: 1000px;
-top: 70px;
-position: relative;
+	margin-top: 70px;
+	position: relative;
 }
 .details li{
 	margin: 2% 0 1% 5%;
@@ -317,14 +320,6 @@ transition: all 7s;
 }
 .rotater{
 	transform: scale(.5);
-}
-@keyframes fill: #f35151;{
-	0%{
-		transform: rotateZ(0deg);
-	}
-	100%{
-		transform: rotateZ(30deg);
-	}
 }
 #laptop path{
 	stroke-dashoffset: 0; 
@@ -596,9 +591,9 @@ padding: 10px;
 		bottom: -55px;
 	  }
 	  /* skills */
-	  .skills ul li {
+	  .skills .language li {
 		left: 25%;
-    position: relative;
+    	position: relative;
 		margin-top: 18px;
 		font-size: 14px;
 	}

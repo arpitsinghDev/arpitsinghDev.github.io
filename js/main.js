@@ -174,7 +174,7 @@ class Particle {
         ctx.stroke();
     }
 }
-window.addEventListener("click", (e) => {
+canvas.addEventListener("click", (e) => {
     mouse.x = e.pageX;
     mouse.y = e.pageY;
    // console.log(e.y,e.clientY,e.pageY,e.y,e.screenY);
@@ -182,15 +182,16 @@ window.addEventListener("click", (e) => {
     mover()
     isRun=true;
 })
-window.addEventListener("touchmove", (e) => {
-    const touch = ev.originalEvent.changedTouches[0];
+canvas.addEventListener("touchmove", (e) => {
+   // console.log(e);
+    const touch = e.changedTouches[0];
     mouse.x = touch.pageX;
     mouse.y = touch.pageY;
     setParticle(10)
     mover()
     isRun=true;
 })
-window.addEventListener("mousemove", (e) => {
+canvas.addEventListener("mousemove", (e) => {
     mouse.x = e.pageX;
     mouse.y = e.pageY;
     setParticle(10)
