@@ -1,23 +1,32 @@
 let box=document.body.clientHeight/5;
+const trans=document.querySelectorAll(".trans")
 $(window).scroll(function() {
     let $height = $(window).scrollTop();
-    console.log($height);
+    trans.forEach(e=>{
+        const top=e.getBoundingClientRect().top
+        console.log(top);
+        if(top - innerHeight*0.7 < 0){
+            e.classList.add('transition')
+            e.classList.remove('trans')
+           
+        }
+    })
+    // console.log($height);
     if($height < window.innerHeight-100) {
         $('.nav *').addClass('defu');
         $('#laptop path').removeClass('fuller');
         $('#proname span').addClass('proname-hover')
-        $('.contants .details').removeClass('index-move')
     } 
     if($height > window.innerHeight-100){
         $('.nav *').removeClass('defu');
         $('#laptop path').addClass('fuller');
         $('#proname span').addClass('proname-hover')
-        $('.contants .details').addClass('index-move')
+        // $('.contants .details').addClass('index-move')
     }
     if($height > 2*innerHeight ){
         $('#laptop path').removeClass('fuller');
         $('#proname span').removeClass('proname-hover')
-        $('.contants .details').removeClass('index-move')
+      
     }
     if($height>=box || ($height < box+300 && $height>=box)){
         $('.skills svg path').addClass('anima');
@@ -63,15 +72,6 @@ $(document).ready(function(){
    }
  
 
-// work
-    $('.sub-work').mouseover(function(){
-        // console.log('yeo')
-       // $('.sub-work .worknav').show(2000);
-    })
-    $('.sub-work').mouseout(function(){
-       // $('.sub-work .worknav').hide(1000);
-    })
-
 $('#send').click(function(){
     let =email=$('#email').val(),
         mess=$('#message').val();
@@ -100,13 +100,6 @@ $('#send').click(function(){
 
 
 });
-let delay=5000, setTimeoutConst;
-$("#skillsvg").on('mouseover', function(){
-    $("#skillsvg").addClass("rotater") 
-})
-$("#skillsvg").on('mouseleave', debounce(function(){
-    $("#skillsvg").removeClass("rotater") 
-},4000))
 
 function debounce(fn,d){
     let timeId;
@@ -124,15 +117,15 @@ $(document).ready(function(){
 let frames = 0;
 let rad = Math.PI / 180;
 
-function animation(){
-    bfx = .01;
-    frames += .55
-    bfx += 0.005 * Math.sin(frames * rad);
-    bf = bfx.toString()
-    //console.log(bf);
-    document.querySelector('#displacementFilter').firstElementChild.attributes.baseFrequency.value=bf;
-    requestAnimationFrame(animation);
-}
+// function animation(){
+//     bfx = .01;
+//     frames += .55
+//     bfx += 0.005 * Math.sin(frames * rad);
+//     bf = bfx.toString()
+//     //console.log(bf);
+//     document.querySelector('#displacementFilter').firstElementChild.attributes.baseFrequency.value=bf;
+//     requestAnimationFrame(animation);
+// }
 const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext("2d")
 canvas.width = innerWidth;
@@ -144,7 +137,7 @@ window.addEventListener("resize",()=>{
 const particleArray = []
 let isRun=false;
 const color=["#ffffff22"]
-console.log(ctx);
+// console.log(ctx);
 const mouse = {
     x: undefined,
     y: undefined
@@ -224,5 +217,6 @@ function animation(){
             i--;
         }
     }
+    
     requestAnimationFrame(animation)
 }

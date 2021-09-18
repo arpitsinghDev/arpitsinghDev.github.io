@@ -1,0 +1,20 @@
+<svg
+ 
+   class="backsvg"
+   width="700"
+   height="124"
+   viewBox="0 0 700 124"
+ >
+  
+  <path
+     style="fill:#edd3d3;fill-opacity:1;stroke:#000000;stroke-width:1.08106852px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 83.90626,15.638041 C 50.250908,15.761374 22.946389,23.187646 1.7055698,41.251661 V 184.20508 H 701.70732 V 40.341463 C 630.74213,65.488096 532.64648,118.49294 401.27549,85.373925 262.72322,50.44449 157.94803,15.36671 83.90626,15.638041 Z"
+     id="path835"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="path848"
+     d="M 193.17455,86.435163 C 64.204032,132.52886 22.94639,49.594517 1.7055698,67.658537 V 210.61196 H 701.70732 V 66.748337 c -70.96519,25.14663 -40.83605,41.495713 -187.7489,-1.0651 C 367.04557,23.122427 322.14507,40.341463 193.17455,86.435163 Z"
+     style="fill:#edd3d3;fill-opacity:1;stroke:#000000;stroke-width:1.08106852px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     sodipodi:nodetypes="zcccczz" />
+</svg>

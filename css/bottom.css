@@ -1,0 +1,29 @@
+.contants .transition {
+  transform: rotateY(30deg);
+  margin-bottom: 3%;
+  transform-origin: left;
+  transition: all 1s ease-out;
+}
+.skills .language li.trans {
+  transform: translateX(-180px) scaleY(0);
+}
+.skills .language li.transition {
+  transform: translate(0) scaleY(1);
+  transition: all .8s linear;
+}
+.skills .tools li {
+  transform: scaleZ(0) translateX(-25px);
+  transition: transform 0.7s ease;
+}
+.skills .tools li.transition {
+  transform: scaleX(1) translateX(0);
+}
+.work .trans{
+    transform: rotateZ(360deg);
+}
+.work .wsvg{
+    transition: transform 0.7s ease;
+}
+.work .wsvg.transition{
+    transform: rotateZ(0deg);
+}

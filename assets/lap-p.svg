@@ -1,0 +1,98 @@
+<svg id='laptop' width="236" height="185" viewBox="0 0 236 185" fill="none">
+					<path
+						d="M24.8784 2.5H208.289C209.931 2.5 211.673 4.05037 211.673 6.49569V132.254C211.673 134.7 209.931 136.25 208.289 136.25H24.8784C23.2367 136.25 21.4948 134.7 21.4948 132.254V6.49569C21.4948 4.05038 23.2367 2.5 24.8784 2.5Z"
+						stroke="#F8E6F4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+					<path
+						d="M35.842 16.5H197.158C198.097 16.5 199.5 17.4803 199.5 19.5262V119.474C199.5 121.52 198.097 122.5 197.158 122.5H35.842C34.903 122.5 33.5 121.52 33.5 119.474V19.5262C33.5 17.4803 34.903 16.5 35.842 16.5Z"
+						stroke="#FEFAFF" stroke-width="7" />
+					<path
+						d="M23.9266 143.352H212.098C212.748 143.352 213.434 143.659 214.285 144.607C215.165 145.589 215.947 146.956 216.786 148.526L233.427 179.682C233.499 179.818 233.679 180.258 232.79 181.123C231.91 181.979 230.628 182.5 229.748 182.5H6.27579C5.40164 182.5 4.09952 181.971 3.20518 181.103C2.29439 180.218 2.52123 179.818 2.56694 179.737L2.56739 179.737L20.2182 148.58L18.043 147.348L20.2182 148.58C20.6023 147.902 20.9538 147.197 21.2618 146.579C21.3325 146.437 21.4009 146.3 21.4669 146.169C21.843 145.42 22.1548 144.836 22.476 144.365C23.0672 143.498 23.4362 143.352 23.9266 143.352Z"
+						stroke="#F8E6F4" stroke-width="5" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M18.6614 174.873L23.0943 165.835H38.3379L34.5932 174.873H18.6614Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M23.0945 165.835L27.7234 156.398H42.2484L38.3381 165.835H23.0945Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M27.7235 156.398L31.2633 149.182H45.2387L42.2485 156.398H27.7235Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M45.2385 149.182H59.8296L57.4131 156.398H42.2483L45.2385 149.182Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M42.2485 156.398L38.3381 165.835H54.2532L57.4133 156.398H42.2485Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M38.3381 165.835L34.5934 174.873H51.227L54.2532 165.835H38.3381Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M51.2271 174.873H68.039L70.339 165.835H54.2533L51.2271 174.873Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M54.253 165.835L57.413 156.398H72.7403L70.3386 165.835H54.253Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M57.413 156.398L59.8295 149.182H74.577L72.7404 156.398H57.413V156.398Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M74.5772 149.182H89.8991L88.665 156.398H72.7406L74.5772 149.182Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M72.7406 156.398L70.3389 165.835H87.0512L88.665 156.398H72.7406Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M68.039 174.873L70.339 165.835H161.1L162.898 174.873H68.039Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M87.051 165.835L88.6648 156.398H104.954L104.146 165.835H87.051Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M88.665 156.398L89.8991 149.182H105.572L104.954 156.398H88.665Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M104.147 165.835H121.283V156.398H104.954L104.147 165.835Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M104.954 156.398L105.572 149.182H121.283V156.398H104.954V156.398Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M121.283 149.182H139.754L140.48 156.398H121.283V149.182Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M121.283 156.398V165.835H141.43L140.48 156.398H121.283Z" stroke="#CCCCCC" stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M139.753 149.182H157.787L159.222 156.398H140.48L139.753 149.182Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M140.48 156.398L141.43 165.835H161.1L159.223 156.398H140.48Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M161.1 165.835L162.897 174.873H182.2L179.568 165.835H161.1Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M161.1 165.835L159.223 156.398H176.821L179.569 165.835H161.1Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M159.223 156.398L157.788 149.182H174.72L176.821 156.398H159.223Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M174.72 149.182H191.329L194.083 156.398H176.821L174.72 149.182Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M176.821 156.398L179.568 165.835H197.684L194.083 156.398H176.821Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M179.568 165.835L182.2 174.873H201.134L197.684 165.835H179.568Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M201.134 174.873H218.864L210.248 156.398H194.083L201.134 174.873Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M194.083 156.398L191.329 149.182H206.882L210.248 156.398H194.083Z" stroke="#CCCCCC"
+						stroke-width="3" />
+					<path
+						d="M106 75L95.7232 65.6016M95.7232 65.6016L89.6207 70.2941L87 55L102.12 58.9756L95.7232 65.6016Z"
+						stroke="#FCF2F2" stroke-width="5.83333" />
+						
+				</svg>

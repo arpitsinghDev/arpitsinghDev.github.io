@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="laptop"
+   width="236"
+   height="185"
+   viewBox="0 0 236 185"
+   fill="none"
+   version="1.1"
+   sodipodi:docname="laptop.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <path
+     d="M24.8784 2.5H208.289C209.931 2.5 211.673 4.05037 211.673 6.49569V132.254C211.673 134.7 209.931 136.25 208.289 136.25H24.8784C23.2367 136.25 21.4948 134.7 21.4948 132.254V6.49569C21.4948 4.05038 23.2367 2.5 24.8784 2.5Z"
+     stroke="#F8E6F4"
+     stroke-width="5"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path2" />
+  <path
+     d="M35.842 16.5H197.158C198.097 16.5 199.5 17.4803 199.5 19.5262V119.474C199.5 121.52 198.097 122.5 197.158 122.5H35.842C34.903 122.5 33.5 121.52 33.5 119.474V19.5262C33.5 17.4803 34.903 16.5 35.842 16.5Z"
+     stroke="#FEFAFF"
+     stroke-width="7"
+     id="path4" />
+  <path
+     d="M23.9266 143.352H212.098C212.748 143.352 213.434 143.659 214.285 144.607C215.165 145.589 215.947 146.956 216.786 148.526L233.427 179.682C233.499 179.818 233.679 180.258 232.79 181.123C231.91 181.979 230.628 182.5 229.748 182.5H6.27579C5.40164 182.5 4.09952 181.971 3.20518 181.103C2.29439 180.218 2.52123 179.818 2.56694 179.737L2.56739 179.737L20.2182 148.58L18.043 147.348L20.2182 148.58C20.6023 147.902 20.9538 147.197 21.2618 146.579C21.3325 146.437 21.4009 146.3 21.4669 146.169C21.843 145.42 22.1548 144.836 22.476 144.365C23.0672 143.498 23.4362 143.352 23.9266 143.352Z"
+     stroke="#F8E6F4"
+     stroke-width="5"
+     id="path6" />
+  <g
+     id="g1155">
+    <path
+       id="path8"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M18.6614 174.873L23.0943 165.835H38.3379L34.5932 174.873H18.6614Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path10"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M23.0945 165.835L27.7234 156.398H42.2484L38.3381 165.835H23.0945Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path12"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M27.7235 156.398L31.2633 149.182H45.2387L42.2485 156.398H27.7235Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path14"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M45.2385 149.182H59.8296L57.4131 156.398H42.2483L45.2385 149.182Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path16"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M42.2485 156.398L38.3381 165.835H54.2532L57.4133 156.398H42.2485Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path18"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M38.3381 165.835L34.5934 174.873H51.227L54.2532 165.835H38.3381Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path20"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M51.2271 174.873H68.039L70.339 165.835H54.2533L51.2271 174.873Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path22"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M54.253 165.835L57.413 156.398H72.7403L70.3386 165.835H54.253Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path24"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M57.413 156.398L59.8295 149.182H74.577L72.7404 156.398H57.413V156.398Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path26"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M74.5772 149.182H89.8991L88.665 156.398H72.7406L74.5772 149.182Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path28"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M72.7406 156.398L70.3389 165.835H87.0512L88.665 156.398H72.7406Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path30"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M68.039 174.873L70.339 165.835H161.1L162.898 174.873H68.039Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path32"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M87.051 165.835L88.6648 156.398H104.954L104.146 165.835H87.051Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path34"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M88.665 156.398L89.8991 149.182H105.572L104.954 156.398H88.665Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path36"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M104.147 165.835H121.283V156.398H104.954L104.147 165.835Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path38"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M104.954 156.398L105.572 149.182H121.283V156.398H104.954V156.398Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path40"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M121.283 149.182H139.754L140.48 156.398H121.283V149.182Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path42"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M121.283 156.398V165.835H141.43L140.48 156.398H121.283Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path44"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M139.753 149.182H157.787L159.222 156.398H140.48L139.753 149.182Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path46"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M140.48 156.398L141.43 165.835H161.1L159.223 156.398H140.48Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path48"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M161.1 165.835L162.897 174.873H182.2L179.568 165.835H161.1Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path50"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M161.1 165.835L159.223 156.398H176.821L179.569 165.835H161.1Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path52"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M159.223 156.398L157.788 149.182H174.72L176.821 156.398H159.223Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path54"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M174.72 149.182H191.329L194.083 156.398H176.821L174.72 149.182Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path56"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M176.821 156.398L179.568 165.835H197.684L194.083 156.398H176.821Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path58"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M179.568 165.835L182.2 174.873H201.134L197.684 165.835H179.568Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path60"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M201.134 174.873H218.864L210.248 156.398H194.083L201.134 174.873Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+    <path
+       id="path62"
+       stroke-width="3"
+       stroke="#CCCCCC"
+       d="M194.083 156.398L191.329 149.182H206.882L210.248 156.398H194.083Z"
+       clip-rule="evenodd"
+       fill-rule="evenodd" />
+  </g>
+  <path
+     d="M 155.34594,98.961979 122.28252,60.800605 m 9.69264,11.048694 -5.13215,13.937343 -4.56049,-24.986037 26.31152,6.494955 z"
+     id="path64"
+     style="fill:none;fill-opacity:1;stroke:#cacaca;stroke-width:7.6;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke-linecap:round"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccc" />
+</svg>
