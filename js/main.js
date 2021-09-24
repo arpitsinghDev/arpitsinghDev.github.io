@@ -4,7 +4,7 @@ $(window).scroll(function() {
     let $height = $(window).scrollTop();
     trans.forEach(e=>{
         const top=e.getBoundingClientRect().top
-        console.log(top);
+        // console.log(top);
         if(top - innerHeight*0.7 < 0){
             e.classList.add('transition')
             e.classList.remove('trans')

@@ -6,6 +6,9 @@
 a {
 	text-decoration: none;
 }
+a:hover{
+	opacity: .7;
+}
 h1,
 h2,
 h3,
@@ -14,6 +17,18 @@ h5,
 h6 {
 	text-transform: capitalize;
 	color: #ffffff;
+}
+button{
+	cursor: pointer;
+}
+button:hover{
+	opacity: 0.7;
+}
+.resume{
+	color: #ffffff;
+	display: inline-block;
+	padding: 1%;
+	border: 1px solid #8b0079;
 }
 body {
 	overflow-x: hidden;
@@ -308,24 +323,6 @@ nav img {
 	stroke-dasharray:450;
 	stroke-linecap:round;
 }
-.show-animation {
-	position: absolute;
-	animation: show-ani 100s alternate infinite;
-}
-.show-animation:focus-visible {
-	transform: scale(543px);
-}
-@keyframes show-ani {
-	0% {
-		transform: translateX(0px) translateY(50px) scaleX(1);
-	}
-	50% {
-		transform: scaleX(0.8) translateX(200px);
-	}
-	100% {
-		transform: translateX(400px) translateY(50px) scaleX(0.9);
-	}
-}
 #skillsvg {
 	position: absolute;
 	width: 500px;
@@ -468,6 +465,10 @@ nav img {
 .form .input::placeholder{
 	color: #d8d8d8;
 }
+.form hr{
+	border-color: #500045;
+	margin: 4% 0;
+}
 .form .input {
 	width: 100%;
 	margin-top: 3%;
@@ -569,15 +570,6 @@ nav img {
 		margin: -20px 0 0 0;
 		padding: 0;
 	}
-	/* .contants #hey{
-		left: 5%;
-	}
-	.contants p{
-		left: 5%;
-	}
-	.contants #proname,#profi{
-		left:10%;
-	} */
 	#laptop {
 		width: 35%;
 		left: 65%;

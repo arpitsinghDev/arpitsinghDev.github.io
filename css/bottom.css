@@ -27,3 +27,10 @@
 .work .wsvg.transition{
     transform: rotateZ(0deg);
 }
+.workcon .works.trans{
+  transform: scale(0.2);
+}
+.workcon .works.transition{
+  transform: scale(1);
+  transition: all 0.5s cubic-bezier(0.01, 0.02, 0.78, 1.79);
+}
