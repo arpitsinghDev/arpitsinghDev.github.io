@@ -18,6 +18,9 @@ h6 {
 	text-transform: capitalize;
 	color: #ffffff;
 }
+p::first-letter,li::first-letter{
+	text-transform: capitalize;
+}
 button{
 	cursor: pointer;
 }
