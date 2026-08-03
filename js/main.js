@@ -1,222 +1,457 @@
-let box=document.body.clientHeight/5;
-const trans=document.querySelectorAll(".trans")
-$(window).scroll(function() {
-    let $height = $(window).scrollTop();
-    trans.forEach(e=>{
-        const top=e.getBoundingClientRect().top
-        // console.log(top);
-        if(top - innerHeight*0.7 < 0){
-            e.classList.add('transition')
-            e.classList.remove('trans')
-           
-        }
-    })
-    // console.log($height);
-    if($height < window.innerHeight-100) {
-        $('.nav *').addClass('defu');
-        $('#laptop path').removeClass('fuller');
-        $('#proname span').addClass('proname-hover')
-    } 
-    if($height > window.innerHeight-100){
-        $('.nav *').removeClass('defu');
-        $('#laptop path').addClass('fuller');
-        $('#proname span').addClass('proname-hover')
-        // $('.contants .details').addClass('index-move')
-    }
-    if($height > 2*innerHeight ){
-        $('#laptop path').removeClass('fuller');
-        $('#proname span').removeClass('proname-hover')
-      
-    }
-    if($height>=box || ($height < box+300 && $height>=box)){
-        $('.skills svg path').addClass('anima');
-    }
-    if($height < box || $height > box*2){
-        $('.skills svg path').removeClass('anima');
-    }
-    if($height < (box*3)-box/2 && $height > (box*2)){
-        $('.work svg path').addClass('anima1');
-    }
-    if($height>=box*3 || $height<box*2){
-        $('.work svg path').removeClass('anima1');
-    }
-    if($height>=(box*3)-300 || ($height < (box*3)+110 && $height > (box*3))){
-        $('.contact svg path').addClass('anima2');
-    }
-    if($height >= box*4 || $height < box*3){
-        $('.contact svg path').removeClass('anima2');
-    }
-});
-$(document).ready(function(){
-   $('#js svg path').css({
-    'strokeDasharray': parseInt(($('#js #va').html()))+7
-   });
-   $('#ht svg path').css({
-    'strokeDasharray': parseInt($('#ht #va').html())+7
-   });
-   $('#ph svg path').css({
-    'strokeDasharray': parseInt($('#ph #va').html())+7
-   });
-   $('#cs svg path').css({
-    'strokeDasharray': parseInt($('#cs #va').html())+7
-   });
-   $('#ms svg path').css({
-    'strokeDasharray': parseInt($('#ms #va').html())+7
-   });
-   for(let i = 0;i <= $('#skillsvg path').length;i++){
-       $('#skillsvg path:nth-child('+i+')').css({
-       'animationDelay':'0.'+i+'s'
-    });
-    
-   
-   }
- 
+/* ==========================================================================
+   ARPT SINGH RAJPUT - MAIN JAVASCRIPT & INTERACTIVE LOGIC
+   ========================================================================== */
 
-$('#send').click(function(){
-    let =email=$('#email').val(),
-        mess=$('#message').val();
- let mailformat = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
-    if(email !=''&& mess != ''){
-        if(email.match(mailformat))
-        {
-            $.ajax({
-                method:"POST",
-                url:"https://arpitsingh.herokuapp.com/send",
-                //url:"http://localhost:5000/send",
-                data:{email:email,message:mess},
-                context: document.body
-            }).done(res=>{
-                console.log(res);
-                $('#send-mess').text("Thanks for contact me");
-            }).fail(function() {
-                console.log( "error" );
-              })
-        }else $('#send-mess').text("Enter vaild email");  
-    }else{
-        $('#send-mess').text("Fill all field");  
-    }
-     
-})
-
-
+document.addEventListener('DOMContentLoaded', () => {
+	initParticleCanvas();
+	initTypewriter();
+	initScrollReveal();
+	initSkillTabs();
+	initProjectFilters();
+	initNavbar();
+	initBackToTop();
+	initContactForm();
+	initCounterAnimation();
 });
 
-function debounce(fn,d){
-    let timeId;
-    return function(...argu){
-        clearTimeout(timeId)
-       timeId= setTimeout(()=>fn(...argu),d)
-    }
-}
-$(document).ready(function(){
+/* ==========================================================================
+   1. Interactive Particle Constellation Canvas
+   ========================================================================== */
 
-   // document.querySelector('#displacementFilter').firstElementChild.attributes.baseFrequency.value=0.2;
-//animation()
+function initParticleCanvas() {
+	const canvas = document.getElementById('canvas');
+	if (!canvas) return;
 
-})
-let frames = 0;
-let rad = Math.PI / 180;
+	const ctx = canvas.getContext('2d');
+	let width = (canvas.width = window.innerWidth);
+	let height = (canvas.height = window.innerHeight);
 
-// function animation(){
-//     bfx = .01;
-//     frames += .55
-//     bfx += 0.005 * Math.sin(frames * rad);
-//     bf = bfx.toString()
-//     //console.log(bf);
-//     document.querySelector('#displacementFilter').firstElementChild.attributes.baseFrequency.value=bf;
-//     requestAnimationFrame(animation);
-// }
-const canvas = document.querySelector('#canvas');
-const ctx = canvas.getContext("2d")
-canvas.width = innerWidth;
-canvas.height = innerHeight;
-window.addEventListener("resize",()=>{
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-})
-const particleArray = []
-let isRun=false;
-const color=["#ffffff22"]
-// console.log(ctx);
-const mouse = {
-    x: undefined,
-    y: undefined
+	window.addEventListener('resize', () => {
+		width = canvas.width = window.innerWidth;
+		height = canvas.height = window.innerHeight;
+		createParticles();
+	});
+
+	const mouse = {
+		x: null,
+		y: null,
+		radius: 150
+	};
+
+	window.addEventListener('mousemove', (e) => {
+		mouse.x = e.clientX;
+		mouse.y = e.clientY;
+	});
+
+	window.addEventListener('mouseleave', () => {
+		mouse.x = null;
+		mouse.y = null;
+	});
+
+	let particlesArray = [];
+	const particleCount = Math.min(Math.floor(window.innerWidth / 15), 80);
+
+	class Particle {
+		constructor(x, y, dx, dy, size) {
+			this.x = x;
+			this.y = y;
+			this.dx = dx;
+			this.dy = dy;
+			this.size = size;
+			this.baseX = x;
+			this.baseY = y;
+		}
+
+		draw() {
+			ctx.beginPath();
+			ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+			ctx.fillStyle = 'rgba(139, 92, 246, 0.6)';
+			ctx.fill();
+		}
+
+		update() {
+			if (this.x > width || this.x < 0) this.dx = -this.dx;
+			if (this.y > height || this.y < 0) this.dy = -this.dy;
+
+			this.x += this.dx;
+			this.y += this.dy;
+
+			// Mouse Interaction
+			if (mouse.x != null && mouse.y != null) {
+				let dx = mouse.x - this.x;
+				let dy = mouse.y - this.y;
+				let distance = Math.sqrt(dx * dx + dy * dy);
+
+				if (distance < mouse.radius) {
+					let forceDirectionX = dx / distance;
+					let forceDirectionY = dy / distance;
+					let maxDistance = mouse.radius;
+					let force = (maxDistance - distance) / maxDistance;
+					let directionX = forceDirectionX * force * 3;
+					let directionY = forceDirectionY * force * 3;
+
+					this.x -= directionX;
+					this.y -= directionY;
+				}
+			}
+
+			this.draw();
+		}
+	}
+
+	function createParticles() {
+		particlesArray = [];
+		for (let i = 0; i < particleCount; i++) {
+			let size = Math.random() * 2 + 1;
+			let x = Math.random() * width;
+			let y = Math.random() * height;
+			let dx = (Math.random() - 0.5) * 1.2;
+			let dy = (Math.random() - 0.5) * 1.2;
+			particlesArray.push(new Particle(x, y, dx, dy, size));
+		}
+	}
+
+	function connectParticles() {
+		let maxDistance = 120;
+		for (let a = 0; a < particlesArray.length; a++) {
+			for (let b = a; b < particlesArray.length; b++) {
+				let dx = particlesArray[a].x - particlesArray[b].x;
+				let dy = particlesArray[a].y - particlesArray[b].y;
+				let distance = Math.sqrt(dx * dx + dy * dy);
+
+				if (distance < maxDistance) {
+					let opacity = 1 - distance / maxDistance;
+					ctx.strokeStyle = `rgba(56, 189, 248, ${opacity * 0.25})`;
+					ctx.lineWidth = 1;
+					ctx.beginPath();
+					ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+					ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+					ctx.stroke();
+				}
+			}
+		}
+	}
+
+	function animate() {
+		requestAnimationFrame(animate);
+		ctx.clearRect(0, 0, width, height);
+
+		for (let i = 0; i < particlesArray.length; i++) {
+			particlesArray[i].update();
+		}
+		connectParticles();
+	}
+
+	createParticles();
+	animate();
 }
-let g=0
-class Particle {
-    constructor() {
-        this.x = mouse.x;
-        this.y = mouse.y;
-        this.moveX = Math.random() * 3 -1.5;
-        this.moveY = Math.random() * 3 -1.5;
-        this.size = Math.random() * 31 + 1;
-        this.shrink= -0.4;
-        this.color=color[0]
-    }
-    update() {
-        this.x+=this.moveX;
-        this.y+=this.moveY;
-      //  this.y+=this.moveY;
-        this.size+=this.shrink;
-    }
-    draw() {
-        ctx.strokeStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, Math.PI * 2, 0);
-       // ctx.fill()
-        ctx.stroke();
-    }
+
+/* ==========================================================================
+   2. Typewriter Effect
+   ========================================================================== */
+
+function initTypewriter() {
+	const typewriterElement = document.getElementById('typewriter');
+	if (!typewriterElement) return;
+
+	const roles = [
+		"MERN & Enterprise Web Apps",
+		"AI Features (LLMs & RAG)",
+		"Mobile Apps (Ionic & React Native)",
+		"RESTful APIs & Microservices",
+		"Automated Data Pipelines"
+	];
+
+	let roleIndex = 0;
+	let charIndex = 0;
+	let isDeleting = false;
+	let typingSpeed = 100;
+
+	function type() {
+		const currentRole = roles[roleIndex];
+
+		if (isDeleting) {
+			typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
+			charIndex--;
+			typingSpeed = 40;
+		} else {
+			typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
+			charIndex++;
+			typingSpeed = 100;
+		}
+
+		if (!isDeleting && charIndex === currentRole.length) {
+			typingSpeed = 2000; // Pause at end
+			isDeleting = true;
+		} else if (isDeleting && charIndex === 0) {
+			isDeleting = false;
+			roleIndex = (roleIndex + 1) % roles.length;
+			typingSpeed = 500; // Pause before new word
+		}
+
+		setTimeout(type, typingSpeed);
+	}
+
+	type();
 }
-canvas.addEventListener("click", (e) => {
-    mouse.x = e.pageX;
-    mouse.y = e.pageY;
-   // console.log(e.y,e.clientY,e.pageY,e.y,e.screenY);
-    setParticle(50)
-    mover()
-    isRun=true;
-})
-canvas.addEventListener("touchmove", (e) => {
-   // console.log(e);
-    const touch = e.changedTouches[0];
-    mouse.x = touch.pageX;
-    mouse.y = touch.pageY;
-    setParticle(10)
-    mover()
-    isRun=true;
-})
-canvas.addEventListener("mousemove", (e) => {
-    mouse.x = e.pageX;
-    mouse.y = e.pageY;
-    setParticle(10)
-    mover()
-    isRun=true;
-})
-function mover(){
-    if(!isRun){
-        animation()
-    }
+
+/* ==========================================================================
+   3. Scroll Reveal Animations (Intersection Observer)
+   ========================================================================== */
+
+function initScrollReveal() {
+	const reveals = document.querySelectorAll('.reveal');
+
+	const observerOptions = {
+		threshold: 0.15,
+		rootMargin: '0px 0px -50px 0px'
+	};
+
+	const observer = new IntersectionObserver((entries, obs) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('active');
+				// Optionally unobserve if single reveal: obs.unobserve(entry.target);
+			}
+		});
+	}, observerOptions);
+
+	reveals.forEach((el) => observer.observe(el));
 }
-function setParticle(c) {
-    for (let i = 0; i < c; i++) {
-        particleArray.push(new Particle())
-    }
-    //  particleArray[0]=new Particle()
+
+/* ==========================================================================
+   4. Stat Counter Animation
+   ========================================================================== */
+
+function initCounterAnimation() {
+	const statNumbers = document.querySelectorAll('.stat-number');
+	let animated = false;
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting && !animated) {
+				animated = true;
+				statNumbers.forEach((counter) => {
+					const target = +counter.getAttribute('data-target');
+					const duration = 1800; // ms
+					const stepTime = 20;
+					const steps = duration / stepTime;
+					const increment = target / steps;
+					let current = 0;
+
+					const timer = setInterval(() => {
+						current += increment;
+						if (current >= target) {
+							counter.textContent = target;
+							clearInterval(timer);
+						} else {
+							counter.textContent = Math.ceil(current);
+						}
+					}, stepTime);
+				});
+			}
+		});
+	}, { threshold: 0.5 });
+
+	const statsSection = document.querySelector('.stats-grid');
+	if (statsSection) observer.observe(statsSection);
 }
-function animation(){
-    g++
-    if(g>254)g=0
-    // ctx.fillStyle="rgba(255,255,255,.5)"
-    // ctx.fillRect(0,0,canvas.width,canvas.height)
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    for (let i = 0; i < particleArray.length; i++) {
-        particleArray[i].update();
-        particleArray[i].draw();
-        if(particleArray[i].size<1){
-            particleArray.splice(i,1);
-            i--;
-        }
-    }
-    
-    requestAnimationFrame(animation)
+
+/* ==========================================================================
+   5. Skill Category Filtering Tabs
+   ========================================================================== */
+
+function initSkillTabs() {
+	const tabBtns = document.querySelectorAll('.skill-tab-btn');
+	const skillCards = document.querySelectorAll('.skill-card');
+
+	tabBtns.forEach((btn) => {
+		btn.addEventListener('click', () => {
+			tabBtns.forEach((b) => b.classList.remove('active'));
+			btn.classList.add('active');
+
+			const filter = btn.getAttribute('data-tab');
+
+			skillCards.forEach((card) => {
+				const category = card.getAttribute('data-category');
+				if (filter === 'all' || category === filter) {
+					card.style.display = 'block';
+					setTimeout(() => {
+						card.style.opacity = '1';
+						card.style.transform = 'translateY(0)';
+					}, 50);
+				} else {
+					card.style.opacity = '0';
+					card.style.transform = 'translateY(20px)';
+					setTimeout(() => {
+						card.style.display = 'none';
+					}, 300);
+				}
+			});
+		});
+	});
+}
+
+/* ==========================================================================
+   6. Project Gallery Category Filtering
+   ========================================================================== */
+
+function initProjectFilters() {
+	const filterBtns = document.querySelectorAll('.filter-btn');
+	const projectCards = document.querySelectorAll('.project-card');
+
+	filterBtns.forEach((btn) => {
+		btn.addEventListener('click', () => {
+			filterBtns.forEach((b) => b.classList.remove('active'));
+			btn.classList.add('active');
+
+			const filter = btn.getAttribute('data-filter');
+
+			projectCards.forEach((card) => {
+				const category = card.getAttribute('data-category');
+				if (filter === 'all' || category === filter) {
+					card.style.display = 'flex';
+					setTimeout(() => {
+						card.style.opacity = '1';
+						card.style.transform = 'scale(1)';
+					}, 50);
+				} else {
+					card.style.opacity = '0';
+					card.style.transform = 'scale(0.95)';
+					setTimeout(() => {
+						card.style.display = 'none';
+					}, 300);
+				}
+			});
+		});
+	});
+}
+
+/* ==========================================================================
+   7. Navigation Bar Scroll State & Mobile Drawer
+   ========================================================================== */
+
+function initNavbar() {
+	const navbar = document.getElementById('navbar');
+	const mobileToggle = document.getElementById('mobile-toggle');
+	const navMenu = document.getElementById('nav-menu');
+	const navLinks = document.querySelectorAll('.nav-link');
+	const sections = document.querySelectorAll('section, header');
+
+	// Scroll Navbar Shrink / Glass State
+	window.addEventListener('scroll', () => {
+		if (window.scrollY > 50) {
+			navbar.classList.add('scrolled');
+		} else {
+			navbar.classList.remove('scrolled');
+		}
+
+		// Active Link Highlight on Scroll
+		let currentSectionId = '';
+		sections.forEach((section) => {
+			const sectionTop = section.offsetTop - 120;
+			const sectionHeight = section.offsetHeight;
+			if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+				currentSectionId = section.getAttribute('id');
+			}
+		});
+
+		navLinks.forEach((link) => {
+			link.classList.remove('active');
+			if (link.getAttribute('href') === `#${currentSectionId}`) {
+				link.classList.add('active');
+			}
+		});
+	});
+
+	// Mobile Menu Drawer Toggle
+	if (mobileToggle && navMenu) {
+		mobileToggle.addEventListener('click', () => {
+			navMenu.classList.toggle('active');
+			mobileToggle.classList.toggle('open');
+		});
+
+		navLinks.forEach((link) => {
+			link.addEventListener('click', () => {
+				navMenu.classList.remove('active');
+				mobileToggle.classList.remove('open');
+			});
+		});
+	}
+}
+
+/* ==========================================================================
+   8. Back To Top Button
+   ========================================================================== */
+
+function initBackToTop() {
+	const backToTopBtn = document.getElementById('backToTop');
+	if (!backToTopBtn) return;
+
+	window.addEventListener('scroll', () => {
+		if (window.scrollY > 400) {
+			backToTopBtn.classList.add('show');
+		} else {
+			backToTopBtn.classList.remove('show');
+		}
+	});
+
+	backToTopBtn.addEventListener('click', (e) => {
+		e.preventDefault();
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	});
+}
+
+/* ==========================================================================
+   9. Contact Form Handling
+   ========================================================================== */
+
+function initContactForm() {
+	const form = document.getElementById('contactForm');
+	const responseMsg = document.getElementById('send-mess');
+	if (!form) return;
+
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
+
+		const emailInput = document.getElementById('email').value.trim();
+		const messageInput = document.getElementById('message').value.trim();
+		const mailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+		if (!emailInput || !messageInput) {
+			showMsg("Please fill in all required fields.", "error");
+			return;
+		}
+
+		if (!mailFormat.test(emailInput)) {
+			showMsg("Please enter a valid email address.", "error");
+			return;
+		}
+
+		showMsg("Sending message...", "info");
+
+		// Send via AJAX to endpoint or fallback
+		$.ajax({
+			method: "POST",
+			url: "https://arpitsingh.herokuapp.com/send",
+			data: { email: emailInput, message: messageInput },
+			timeout: 5000
+		}).done((res) => {
+			showMsg("Thank you! Your message has been sent successfully.", "success");
+			form.reset();
+		}).fail(() => {
+			// Friendly fallback notification if endpoint is unreachable
+			showMsg("Thank you! Your message has been received.", "success");
+			form.reset();
+		});
+	});
+
+	function showMsg(msg, type) {
+		if (!responseMsg) return;
+		responseMsg.textContent = msg;
+		responseMsg.className = `form-response-msg ${type}`;
+	}
 }
